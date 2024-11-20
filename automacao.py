@@ -1,9 +1,12 @@
 from selenium import webdriver 
+from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
+from webdriver_manager.firefox import GeckoDriverManager
 
-navegador = webdriver.Firefox()
+
+navegador = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 navegador.get("http://127.0.0.1:5500/projeto_fic/build/index.html")
 
 # Função para adicionar uma tarefa
